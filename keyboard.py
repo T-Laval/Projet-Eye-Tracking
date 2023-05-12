@@ -122,11 +122,11 @@ def display():
                                 command=lambda: press('\t'))
         tab_button.grid(row=2, column=0, columnspan=2, ipadx=55, ipady=10)
 
-        Q = ttk.Button(key, text='Q', width=6, command=lambda: press('Q'))
-        Q.grid(row=2, column=2, ipadx=6, ipady=10)
+        A = ttk.Button(key, text='A', width=6, command=lambda: press('A'))
+        A.grid(row=2, column=2, ipadx=6, ipady=10)
 
-        W = ttk.Button(key, text='W', width=6, command=lambda: press('W'))
-        W.grid(row=2, column=3, ipadx=6, ipady=10)
+        Z = ttk.Button(key, text='Z', width=6, command=lambda: press('Z'))
+        Z.grid(row=2, column=3, ipadx=6, ipady=10)
 
         E = ttk.Button(key, text='E', width=6, command=lambda: press('E'))
         E.grid(row=2, column=4, ipadx=6, ipady=10)
@@ -161,56 +161,53 @@ def display():
         curly_r.grid(row=2, column=13, ipadx=6, ipady=10)
 
         # Third Line Buttons
+        shift = ttk.Button(key, text='Shift', width=6, command=Shift)
+        shift.grid(row=3, column=0, columnspan=2, ipadx=55, ipady=10)
 
-        A = ttk.Button(key, text='A', width=6, command=lambda: press('A'))
-        A.grid(row=3, column=0, ipadx=6, ipady=10)
+        Q = ttk.Button(key, text='Q', width=6, command=lambda: press('Q'))
+        Q.grid(row=3, column=2, ipadx=6, ipady=10)
 
         S = ttk.Button(key, text='S', width=6, command=lambda: press('S'))
-        S.grid(row=3, column=1, ipadx=6, ipady=10)
+        S.grid(row=3, column=3, ipadx=6, ipady=10)
 
         D = ttk.Button(key, text='D', width=6, command=lambda: press('D'))
-        D.grid(row=3, column=2, ipadx=6, ipady=10)
+        D.grid(row=3, column=4, ipadx=6, ipady=10)
 
         F = ttk.Button(key, text='F', width=6, command=lambda: press('F'))
-        F.grid(row=3, column=3, ipadx=6, ipady=10)
+        F.grid(row=3, column=5, ipadx=6, ipady=10)
 
         G = ttk.Button(key, text='G', width=6, command=lambda: press('G'))
-        G.grid(row=3, column=4, ipadx=6, ipady=10)
+        G.grid(row=3, column=6, ipadx=6, ipady=10)
 
         H = ttk.Button(key, text='H', width=6, command=lambda: press('H'))
-        H.grid(row=3, column=5, ipadx=6, ipady=10)
+        H.grid(row=3, column=7, ipadx=6, ipady=10)
 
         J = ttk.Button(key, text='J', width=6, command=lambda: press('J'))
-        J.grid(row=3, column=6, ipadx=6, ipady=10)
+        J.grid(row=3, column=8, ipadx=6, ipady=10)
 
         K = ttk.Button(key, text='K', width=6, command=lambda: press('K'))
-        K.grid(row=3, column=7, ipadx=6, ipady=10)
+        K.grid(row=3, column=9, ipadx=6, ipady=10)
 
         L = ttk.Button(key, text='L', width=6, command=lambda: press('L'))
-        L.grid(row=3, column=8, ipadx=6, ipady=10)
+        L.grid(row=3, column=10, ipadx=6, ipady=10)
 
         colon = ttk.Button(key, text=':', width=6,
                            command=lambda: press(':'))
-        colon.grid(row=3, column=9, ipadx=6, ipady=10)
+        colon.grid(row=3, column=11, ipadx=6, ipady=10)
 
         quotation = ttk.Button(key, text='"', width=6,
                                command=lambda: press('"'))
-        quotation.grid(row=3, column=10, ipadx=6, ipady=10)
+        quotation.grid(row=3, column=12, ipadx=6, ipady=10)
 
         pipe = ttk.Button(key, text='|', width=6, command=lambda: press('|'))
-        pipe.grid(row=3, column=11, ipadx=6, ipady=10)
-
-        enter = ttk.Button(key, text='Enter', width=6,
-                           command=lambda: press('\n'))
-        enter.grid(row=3, column=12, columnspan=2, ipadx=55, ipady=10)
+        pipe.grid(row=3, column=13, ipadx=6, ipady=10)
 
         # Fourth line Buttons
+        theme = ttk.Button(key, text='Theme', width=6, command=Theme)
+        theme.grid(row=4, column=0, columnspan=2, ipadx=55, ipady=10)
 
-        shift = ttk.Button(key, text='Shift', width=6, command=Shift)
-        shift.grid(row=4, column=0, columnspan=2, ipadx=55, ipady=10)
-
-        Z = ttk.Button(key, text='Z', width=6, command=lambda: press('Z'))
-        Z.grid(row=4, column=2, ipadx=6, ipady=10)
+        W = ttk.Button(key, text='W', width=6, command=lambda: press('W'))
+        W.grid(row=4, column=2, ipadx=6, ipady=10)
 
         X = ttk.Button(key, text='X', width=6, command=lambda: press('X'))
         X.grid(row=4, column=3, ipadx=6, ipady=10)
@@ -249,8 +246,9 @@ def display():
                            command=lambda: press(' '))
         space.grid(row=5, column=2, columnspan=8, ipadx=350, ipady=10)
 
-        theme = ttk.Button(key, text='Theme', width=6, command=Theme)
-        theme.grid(row=5, column=12, columnspan=2, ipadx=55, ipady=10)
+        enter = ttk.Button(key, text='Enter', width=6,
+                           command=lambda: press('\n'))
+        enter.grid(row=5, column=12, columnspan=2, ipadx=55, ipady=10)
 
         key.mainloop()
     else:
@@ -305,11 +303,11 @@ def display():
                                 command=lambda: press('\t'))
         tab_button.grid(row=2, column=0, columnspan=2, ipadx=55, ipady=10)
 
-        Q = ttk.Button(key, text='q', width=6, command=lambda: press('q'))
-        Q.grid(row=2, column=2, ipadx=6, ipady=10)
+        A = ttk.Button(key, text='a', width=6, command=lambda: press('a'))
+        A.grid(row=2, column=2, ipadx=6, ipady=10)
 
-        W = ttk.Button(key, text='w', width=6, command=lambda: press('w'))
-        W.grid(row=2, column=3, ipadx=6, ipady=10)
+        Z = ttk.Button(key, text='z', width=6, command=lambda: press('z'))
+        Z.grid(row=2, column=3, ipadx=6, ipady=10)
 
         E = ttk.Button(key, text='e', width=6, command=lambda: press('e'))
         E.grid(row=2, column=4, ipadx=6, ipady=10)
@@ -342,57 +340,56 @@ def display():
         sq_r.grid(row=2, column=13, ipadx=6, ipady=10)
 
         # Third Line Buttons
+        
+        shift = ttk.Button(key, text='Shift', width=6, command=Shift)
+        shift.grid(row=3, column=0, columnspan=2, ipadx=55, ipady=10)
 
-        A = ttk.Button(key, text='a', width=6, command=lambda: press('a'))
-        A.grid(row=3, column=0, ipadx=6, ipady=10)
+        Q = ttk.Button(key, text='q', width=6, command=lambda: press('q'))
+        Q.grid(row=3, column=2, ipadx=6, ipady=10)
 
         S = ttk.Button(key, text='s', width=6, command=lambda: press('s'))
-        S.grid(row=3, column=1, ipadx=6, ipady=10)
+        S.grid(row=3, column=3, ipadx=6, ipady=10)
 
         D = ttk.Button(key, text='d', width=6, command=lambda: press('d'))
-        D.grid(row=3, column=2, ipadx=6, ipady=10)
+        D.grid(row=3, column=4, ipadx=6, ipady=10)
 
         F = ttk.Button(key, text='f', width=6, command=lambda: press('f'))
-        F.grid(row=3, column=3, ipadx=6, ipady=10)
+        F.grid(row=3, column=5, ipadx=6, ipady=10)
 
         G = ttk.Button(key, text='g', width=6, command=lambda: press('g'))
-        G.grid(row=3, column=4, ipadx=6, ipady=10)
+        G.grid(row=3, column=6, ipadx=6, ipady=10)
 
         H = ttk.Button(key, text='h', width=6, command=lambda: press('h'))
-        H.grid(row=3, column=5, ipadx=6, ipady=10)
+        H.grid(row=3, column=7, ipadx=6, ipady=10)
 
         J = ttk.Button(key, text='j', width=6, command=lambda: press('j'))
-        J.grid(row=3, column=6, ipadx=6, ipady=10)
+        J.grid(row=3, column=8, ipadx=6, ipady=10)
 
         K = ttk.Button(key, text='k', width=6, command=lambda: press('k'))
-        K.grid(row=3, column=7, ipadx=6, ipady=10)
+        K.grid(row=3, column=9, ipadx=6, ipady=10)
 
         L = ttk.Button(key, text='l', width=6, command=lambda: press('l'))
-        L.grid(row=3, column=8, ipadx=6, ipady=10)
+        L.grid(row=3, column=10, ipadx=6, ipady=10)
 
         semi_co = ttk.Button(key, text=';', width=6,
                              command=lambda: press(';'))
-        semi_co.grid(row=3, column=9, ipadx=6, ipady=10)
+        semi_co.grid(row=3, column=11, ipadx=6, ipady=10)
 
         quotation = ttk.Button(key, text="'", width=6,
                                command=lambda: press('"'))
-        quotation.grid(row=3, column=10, ipadx=6, ipady=10)
+        quotation.grid(row=3, column=12, ipadx=6, ipady=10)
 
         back_slash = ttk.Button(key, text='\\', width=6,
                                 command=lambda: press('\\'))
-        back_slash.grid(row=3, column=11, ipadx=6, ipady=10)
-
-        enter = ttk.Button(key, text='Enter', width=6,
-                           command=lambda: press('\n'))
-        enter.grid(row=3, column=12, columnspan=2, ipadx=55, ipady=10)
+        back_slash.grid(row=3, column=13, ipadx=6, ipady=10)
 
         # Fourth line Buttons
+        
+        theme = ttk.Button(key, text='Theme', width=6, command=Theme)
+        theme.grid(row=4, column=0, columnspan=2, ipadx=55, ipady=10)
 
-        shift = ttk.Button(key, text='Shift', width=6, command=Shift)
-        shift.grid(row=4, column=0, columnspan=2, ipadx=55, ipady=10)
-
-        Z = ttk.Button(key, text='z', width=6, command=lambda: press('z'))
-        Z.grid(row=4, column=2, ipadx=6, ipady=10)
+        W = ttk.Button(key, text='w', width=6, command=lambda: press('w'))
+        W.grid(row=4, column=2, ipadx=6, ipady=10)
 
         X = ttk.Button(key, text='x', width=6, command=lambda: press('x'))
         X.grid(row=4, column=3, ipadx=6, ipady=10)
@@ -430,8 +427,9 @@ def display():
                            command=lambda: press(' '))
         space.grid(row=5, column=2, columnspan=8, ipadx=350, ipady=10)
 
-        theme = ttk.Button(key, text='Theme', width=6, command=Theme)
-        theme.grid(row=5, column=12, columnspan=2, ipadx=55, ipady=10)
+        enter = ttk.Button(key, text='Enter', width=6,
+                           command=lambda: press('\n'))
+        enter.grid(row=5, column=12, columnspan=2, ipadx=55, ipady=10)
 
         key.mainloop()
 
