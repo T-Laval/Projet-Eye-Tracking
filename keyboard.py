@@ -1,9 +1,26 @@
 import tkinter as tk
+import mouse,time
 from tkinter import ttk
+
+
 
 key = tk.Tk()
 
+#Mouth click with F11 press
+def on_key_press(event):
+    if event.keysym == "F11":
+        x1,y1 = mouse.get_position()
+        time.sleep(1)
+        x2, y2 = mouse.get_position()
+        if abs(x1-x2) <= 4 and abs(y1-y2) <=4 :
+            mouse.click()
+        else :
+            print("mouse mouvement too far !")
+
+
 key.title('On Screen Keyboard')
+key.bind_all("<F11>", on_key_press)
+
 
 
 key.geometry('1385x320')  # Window size
@@ -29,7 +46,6 @@ exp = " "
 is_shift = False
 
 # Necessary functions
-
 
 def press(num):
     global exp
