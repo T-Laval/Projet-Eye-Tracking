@@ -1,4 +1,6 @@
-import tkthread  
+import tkthread
+#need pip install
+import webbrowser
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
@@ -124,6 +126,11 @@ def Clear():
     global exp
     exp = " "
     equation.set(exp)
+
+def Search():
+    global exp
+    url = "https://www.google.com.tr/search?q={}".format(exp)
+    webbrowser.open_new_tab(url)
 
 
 def Theme():
@@ -422,7 +429,7 @@ def display():
         space.bind ("<Leave>", end_help)
         
         enter = ttk.Button(key, text='Enter', width=6,
-                           command=lambda: press('\n'))
+                           command=Search)
         enter.grid(row=5, column=12, columnspan=2, ipadx=55, ipady=10,sticky="NSEW")
         enter.bind ("<Enter>", start_help)
         enter.bind ("<Leave>", end_help)
@@ -710,7 +717,7 @@ def display():
         space.bind ("<Enter>", start_help)
         space.bind ("<Leave>", end_help)
         enter = ttk.Button(key, text='Enter', width=6,
-                           command=lambda: press('\n'))
+                           command=Search)
         enter.grid(row=5, column=12, columnspan=2, ipadx=55, ipady=10,sticky="NSEW")
         enter.bind ("<Enter>", start_help)
         enter.bind ("<Leave>", end_help)
