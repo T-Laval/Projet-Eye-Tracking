@@ -14,9 +14,9 @@ tkthread.patch()
 #Initiate BDD
 with open('bdd.csv', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=';')
-    listOfWord = []
+    liste_mots = []
     for row in reader:
-        listOfWord.append(row[1])
+        liste_mots.append(row[1])
 
 
 key = tk.Tk()
@@ -110,7 +110,7 @@ def start_help (event):
 
 def end_help (event):
     # If therre is one, end the help timer
-    print("left")
+    print(trouver_mot_plus_proche(exp, liste_mots))
     if h: h.cancel ()
 
 def press(num):
@@ -732,5 +732,20 @@ def display():
         enter.bind ("<Leave>", end_help)
         key.mainloop()
 
+
+# Recherche de mots
+import Levenshtein
+
+def trouver_mot_plus_proche(mot, liste_mots):
+    distance_min = float('inf')
+    mot_plus_proche = ""
+
+    for mot_liste in liste_mots:
+        distance = Levenshtein.distance(mot, mot_liste)
+        if distance < distance_min:
+            distance_min = distance
+            mot_plus_proche = mot_liste
+
+    return mot_plus_proche
 
 display()
