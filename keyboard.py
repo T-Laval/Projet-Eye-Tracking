@@ -7,7 +7,16 @@ from tkinter import *
 import threading
 import time
 import mouse
+import csv
+
 tkthread.patch()
+
+#Initiate BDD
+with open('bdd.csv', newline='') as csvfile:
+    reader = csv.reader(csvfile, delimiter=';')
+    listOfWord = []
+    for row in reader:
+        listOfWord.append(row[1])
 
 
 key = tk.Tk()
