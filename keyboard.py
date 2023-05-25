@@ -20,7 +20,7 @@ with open('bdd.csv', newline='') as csvfile:
         liste_mots.append(row[1])
 
 key = tk.Tk()
-
+prop = tk.StringVar()
 key.title('On Screen Keyboard')
 
 key.geometry('1385x320')  # Window size
@@ -30,9 +30,10 @@ key.minsize(width=480, height=110)
 style = ttk.Style()
 key.configure(bg='gray27')
 style.configure('TButton', background='gray21')
-style.configure('TButton', foreground='white')
+style.configure('TButton', background='azure')
+style.configure('TButton', foreground='black')
 
-theme = "light"
+theme = "dark"
 
 Grid.rowconfigure(key, 0, weight=1)
 Grid.columnconfigure(key, 0, weight=1)
@@ -100,7 +101,7 @@ class hover_timer:
 
 
 h = None
-
+mot = ""
 
 def start_help(event):
     # Create a new help timer
@@ -110,7 +111,6 @@ def start_help(event):
 
 def end_help(event):
     # If therre is one, end the help timer
-    print(trouver_mot_plus_proche(exp, liste_mots))
     if h: h.cancel()
 
 
@@ -118,6 +118,15 @@ def press(num):
     global exp
     exp = exp + str(num)
     equation.set(exp)
+    global mot
+
+    if " " in exp:
+        temp = exp.split(" ")
+        popped = temp.pop()
+        mot = trouver_mot_plus_proche(popped,liste_mots)
+    else :
+        mot = trouver_mot_plus_proche(exp, liste_mots)
+    prop.set(mot)
 
 
 def Backspace():
@@ -168,6 +177,7 @@ def Theme():
 
 def display():
     if (is_shift):
+
         # Adding keys line wise
         # First Line Button
         tilda = ttk.Button(key, text='~', width=6, command=lambda: press('~'))
@@ -757,6 +767,27 @@ def trouver_mot_plus_proche(mot, liste_mots):
             mot_plus_proche = mot_liste
 
     return mot_plus_proche
+
+def replace():
+    global mot
+    global exp
+    if " " in exp:
+        temp = exp.split(" ")
+        popped = temp.pop()
+        nt = ""
+        for s in temp :
+            nt+= s + " "
+        exp = nt + mot + " "
+    else :
+        exp = mot + " "
+    prop.set("mot")
+    mot = ""
+    equation.set(exp)
+
+proposition = ttk.Button(key, textvariable=prop, width=6, command=replace)
+proposition.grid(row=0, column=13, ipadx=6, ipady=10, sticky="NSEW")
+proposition.bind("<Enter>", start_help)
+proposition.bind("<Leave>", end_help)
 
 
 display()
