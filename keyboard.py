@@ -1,14 +1,16 @@
-import tkthread
-# need pip install
-import webbrowser
-import pyautogui
-import tkinter as tk
-from tkinter import ttk
-from tkinter import *
+import csv
 import threading
 import time
+import tkinter as tk
+# need pip install
+import webbrowser
+from tkinter import *
+from tkinter import ttk
+
 import mouse
-import csv
+import pyautogui
+import tkthread
+from spellchecker import SpellChecker
 
 tkthread.patch()
 
@@ -788,6 +790,27 @@ proposition = ttk.Button(key, textvariable=prop, width=6, command=replace)
 proposition.grid(row=0, column=13, ipadx=6, ipady=10, sticky="NSEW")
 proposition.bind("<Enter>", start_help)
 proposition.bind("<Leave>", end_help)
+
+def correct_text(text):
+    spell = SpellChecker()
+    corrected_text = []
+    words = text.split()
+
+    for word in words:
+        # Vérifie si le mot est dans le dictionnaire
+        if not spell.unknown([word]):
+            corrected_text.append(word)
+        else:
+            # Récupère la correction orthographique
+            corrected_word = spell.correction(word)
+            corrected_text.append(corrected_word)
+
+    return ' '.join(corrected_text)
+
+#for test
+# text = input("Entrez votre texte : ")
+# corrected_text = correct_text(text)
+# print("Texte corrigé :", corrected_text)
 
 
 display()
