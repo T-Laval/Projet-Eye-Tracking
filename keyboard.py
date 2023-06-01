@@ -23,7 +23,7 @@ with open('bdd.csv', newline='') as csvfile:
 
 key = tk.Tk()
 prop = tk.StringVar()
-key.title('On Screen Keyboard')
+key.title('Projet Eye Tracking')
 
 key.geometry('1385x320')  # Window size
 key.maxsize(width=1385, height=320)
@@ -79,12 +79,9 @@ class hover_timer:
 
     def start_timer(self):
         self.active = True
-        # time.sleep (self.delay)
         time.sleep(1.0)
-        # if not self.cancel_var :
         if not self.cancel_var:
             mouse.click('left')
-            print("3seconds IN")
         self.active = False
 
     def delayed_stop(self):
